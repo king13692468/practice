@@ -2,20 +2,19 @@ import java.util.Scanner;
 public class Main{
 
     public static void main(String[]args) {
-    Scanner sc=new Scanner(System.in);
-    int num=sc.nextInt();
-    int or=num;
-    int digit;
-    int reversed=0;
-    while(num!=0){
-        digit=num%10;                     
-        reversed=reversed*10+digit;
-        num/=10;
+    Scanner sc=new Scanner(System.in);        //creating an object to store value for num
+    int num=sc.nextInt();                     //taking input from the user
+    int original=num;                         // Save the original number so we can compare it later
+    int digit;                                
+    int reversed=0;                           // This will hold the reversed number
+    while(num!=0){                            // loop till num is equals to zero
+        digit=num%10;                         //it will store the last digit of the number
+        reversed=reversed*10+digit;           //add the last digit
+        num/=10;                              //remove the last digit from num
     }
-    if(or==reversed){
-        System.out.print("yes");
+    if(original==reversed){                   // If the reversed number matches the original, it's a palindrome
     }
-    else{
+    else{                                     //otherwise it is not a palindrome
         System.out.print("no");
     }
     }
